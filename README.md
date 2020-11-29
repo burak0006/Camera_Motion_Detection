@@ -47,6 +47,10 @@ Height    : 288
 Profile   : H.264 Baseline IPPPP...
 Rate      : 30 Hz, 15 GOP
 
+<img src="https://github.com/burak0006/Camera_Motion_Detection/blob/main/images/coastguard_frame64.png?raw=true" width = "352" height = "288"/> <img src="https://github.com/burak0006/Camera_Motion_Detection/blob/main/images/coastguard_frame_64mvs.png?raw=true" width = "352" height = "288"/> 
+
+Coastguard 64 th.frame and its MV field
+
 ### Requirements
 
 - MacOS X,Linux or Windows
