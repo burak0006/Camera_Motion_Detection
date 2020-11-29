@@ -42,7 +42,7 @@ This project comprises performing super fast real time GME based on motion vecto
 Input     : Coastguard.yuv
 Width     : 352
 Height    : 288
-Profile   : h.264 Baseline IPPPP...
+Profile   : H.264 Baseline IPPPP...
 Rate      : 30 Hz, 15 GOP
 
 ### Requirements
@@ -50,3 +50,16 @@ Rate      : 30 Hz, 15 GOP
 - MacOS X,Linux or Windows
 
 ### The Results 
+
+The processed frames are shown in below figure. The blacked regions are having outlier MVs so they are omitted during GME. These are generally located at the edges of the frame or borders of a frame 
+
+<img src="https://github.com/burak0006/Camera_Motion_Detection/blob/main/images/coastguardprocessed.gif?raw=true" width = "352" height = "288"/>
+
+### The References
+
+[1] https://www.researchgate.net/publication/258938629_OR_GME_software
+(Thanks to Ivan Bajic)
+Y.-M. Chen and I.V. Bajic, Motion Vector Outlier Rejection Cascade for Global Motion Estimation, IEEE Signal Processing Letters, 17 (2010) 197-200.
+[2] https://uk.mathworks.com/matlabcentral/fileexchange/40359-h-264-baseline-codec-v2
+(Thanks to Abdullah Al Muhit)
+A A Muhit, M R Pickering, M R Frater and J F Arnold, Video Coding using Elastic Motion Model and Larger Blocks, IEEE Trans. Circ. And Syst. for Video Technology, vol. 20, no. 5, pp. 661-672, 2010.
