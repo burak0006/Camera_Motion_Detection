@@ -1,6 +1,6 @@
 ## Real Time Camera_Motion_Detection in H.264 Compressed Domain
 
-Global motion estimation (GME) is basically performed to detect and extract camera motion. As being one of the most important tools in video processing field with many applications, it is mainly carried out in pixel or compressed domain. Since those based on the pixels have drawbacks such as high computational complexity, most researches are oriented to the compressed domain in which motion vectors are utilized.  On the other hand, there are many unwanted existing outliers in motion vector based global motion estimation because of noise or foreground effects. In this work, proposed motion vector dissimilarity measure is used to remove the outliers to provide fast and accurate motion vector based global motion estimation. For coastguard.yuv sequence to download
+Global motion estimation (GME) is basically performed to detect and extract camera motion. As being one of the most important tools in video processing field with many applications, it is mainly carried out in pixel or compressed domain. Since those based on the pixels have drawbacks such as high computational complexity, most researches are oriented to the compressed domain in which motion vectors are utilized.  On the other hand, there are many unwanted existing outliers in motion vector based global motion estimation because of noise or foreground effects. In this work, proposed motion vector dissimilarity measure is used to remove the outliers to provide fast and accurate motion vector based global motion estimation. For yuv sequences to download, please follow the link
 
 http://trace.eas.asu.edu/yuv/
 
@@ -25,7 +25,7 @@ In encoding step (previously done), if a block whose size is larger than 4x4, MV
 This project comprises performing super fast real time GME based on motion vectors. The only decoded information from bitstream is MVs enabling very low latency that can be used in many applications such as video retrieval and indexing, image registration, background modeling, moving object segmentation, scene analysis, object-oriented coding, and MPEG-7 video descriptors. In other words, wherever you want!. In video processing research community, my personel opinion is that there is a difficulty regarding how to get features like MVs from high efficient compressed domains such as H.264/AVC or H.265/HEVC. I basically extracted MVs both using JM reference software and Matlab for ```coastguard_cif``` sequence. In this project, MVs obtained by variable block size motion estimation are used to estimate camera motion parameters. In the end, how far the camera moved in terms of pan, tilt and zoom are calculated through the estimated parameters using perspective transformation and Newton Rapson gradient descent algorithms. Our dissimilarity measure is very efficient and used to detect outlier MVs, which can be both noise or foreground that disrupt the camera motion performance. Our proposed algorithm automatically detects which MVs are more likely to be an outlier! The general steps are:
 
 1. Motion vector extraction from bitstream
-2. Detection MV outliers
+2. Detection of MV outliers
 3. Performing GME using the rest of MVs.
 4. Performing GMC (optional)
 
@@ -57,7 +57,7 @@ Coastguard 64 th.frame and its MV field
 
 ### The Results 
 
-The processed frames are shown in below figure. The blacked regions are having outlier MVs so they are omitted during GME. These are generally located at the edges of the frame or borders of a frame 
+The processed frames are shown in below figure. The blacked regions include outlier MVs so they are omitted during GME. These are generally located at the edges of the frame or the borders. 
 
 <img src="https://github.com/burak0006/Camera_Motion_Detection/blob/main/images/coastguardprocessed.gif?raw=true" width = "352" height = "288"/>
 
