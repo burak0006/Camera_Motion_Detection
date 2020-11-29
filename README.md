@@ -1,6 +1,8 @@
 ## Real Time Camera_Motion_Detection in H.264 Compressed Domain
 
-Global motion estimation (GME) is basically performed to detect and extract camera motion. As being one of the most important tools in video processing field with many applications, it is mainly carried out in pixel or compressed domain. Since those based on the pixels have drawbacks such as high computational complexity, most researches are oriented to the compressed domain in which motion vectors are utilized.  On the other hand, there are many unwanted existing outliers in motion vector based global motion estimation because of noise or foreground effects. In this work, proposed motion vector dissimilarity measure is used to remove the outliers to provide fast and accurate motion vector based global motion estimation
+Global motion estimation (GME) is basically performed to detect and extract camera motion. As being one of the most important tools in video processing field with many applications, it is mainly carried out in pixel or compressed domain. Since those based on the pixels have drawbacks such as high computational complexity, most researches are oriented to the compressed domain in which motion vectors are utilized.  On the other hand, there are many unwanted existing outliers in motion vector based global motion estimation because of noise or foreground effects. In this work, proposed motion vector dissimilarity measure is used to remove the outliers to provide fast and accurate motion vector based global motion estimation. For coastguard.yuv sequence to download
+
+http://trace.eas.asu.edu/yuv/
 
 #### Our publication: 
 Please cite when using the codes. Thanks
