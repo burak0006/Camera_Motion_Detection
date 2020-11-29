@@ -20,13 +20,33 @@ In encoding step (previously done), if a block whose size is larger than 4x4, MV
 
 ### The Scope of the Project
 
-This project comprises performing super fast real time GME based on motion vectors. The only decoded information from bitstream is MVs enabling very low latency that can be used in many applications such as video retrieval and indexing, image registration, background modeling, moving object segmentation, scene analysis, object-oriented coding, and MPEG-7 video descriptors. In other words, wherever you want!. In video processing research community, my personel opinion is that there is a difficulty regarding how to get features like MVs from high efficient compressed domains such as H.264/AVC or H.265/HEVC. I basically extracted MVs both using JM reference software and Matlab for ```coastguard_cif``` sequence. In this project, MVs obtained by variable block size motion estimation are used to estimate camera motion parameters. In the end, how far the camera moved in terms of pan, tilt and zoom are calculated through the estimated parameters using perspective transformation and Newton Rapson gradient descent algorithms. Our dissimilarity measure is very efficient and used to detect outlier MVs, which can be both noise or foreground that disrupt the camera motion performance. Our proposed algorithm automatically detects which MVs are more likely to be outlier! The project is performed basically as follows respectively:
+This project comprises performing super fast real time GME based on motion vectors. The only decoded information from bitstream is MVs enabling very low latency that can be used in many applications such as video retrieval and indexing, image registration, background modeling, moving object segmentation, scene analysis, object-oriented coding, and MPEG-7 video descriptors. In other words, wherever you want!. In video processing research community, my personel opinion is that there is a difficulty regarding how to get features like MVs from high efficient compressed domains such as H.264/AVC or H.265/HEVC. I basically extracted MVs both using JM reference software and Matlab for ```coastguard_cif``` sequence. In this project, MVs obtained by variable block size motion estimation are used to estimate camera motion parameters. In the end, how far the camera moved in terms of pan, tilt and zoom are calculated through the estimated parameters using perspective transformation and Newton Rapson gradient descent algorithms. Our dissimilarity measure is very efficient and used to detect outlier MVs, which can be both noise or foreground that disrupt the camera motion performance. Our proposed algorithm automatically detects which MVs are more likely to be an outlier! The project is performed basically as follows respectively:
 
 1. Motion vector extraction from bitstream
 2. Detection MV outliers
 3. Performing GME using the rest of MVs.
 4. Performing GMC (optional)
 
+### Code Explanations
+
+```main.m```          : you can simply run this code to see the results. You need to change yuv sequence and mv_path
+```readOneFrame.m```  : reads one frame from the YUV sequence
+```segshow.m```       : outlier MV regions are shown in black 
+```psnrGMC.m```       : PSNR Calculation between the current and GMC frames
+```o_rej.m```         : Our MV Dissimilarity Measure
+```mvGME_NR_test.m``` : Newton Raphson Gradient Descent Algorithm
+```gmeTF.m```         : Affine transformation function (Rotation, Translation, Resize)
+
+### Input Sequence
+
+Input     : Coastguard.yuv
+Width     : 352
+Height    : 288
+Profile   : h.264 Baseline IPPPP...
+Rate      : 30 Hz, 15 GOP
+
 ### Requirements
 
 - MacOS X,Linux or Windows
+
+### The Results 
